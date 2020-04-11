@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>MemeGen | Reem Alon</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body onload="onInit()">
+    <header class="header-container flex align-center justify-center">
+        <nav class="nav-bar flex space-between align-center">
+            <div class="logo flex align-center"> <img src="img/LOGO.png"> </div>
+            <div class="header-breadcrumb flex align-center">
+                <h2 onclick="onbreadGalleryClick()" class="gallery-bread focus-breadcrumb">Gallery ></h2>
+                <h2 class="editor-bread"> Editor > </h2>
+                <h2 onclick="onbreadSavedClick()" class="saved-bread"> Saved Memes </h2>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex column align-center">
+        <div class="meme-gallery-container flex justify-center align-center column">
+            <section class="meme-gallery-filter flex space-between align-center">
+                <select onchange="onFilterChange(this.value)">
+                    <option value="All">All Memes</option>
+                    <option value="Politics">Politics</option>
+                    <option value="Puppy">Puppy</option>
+                    <option value="Baby">Baby</option>
+                    <option value="Animals">Animals</option>
+                    <option value="Funny">Funny</option>
+                </select>
+            </section>
+            <section class="meme-images flex space-between wrap">
+
+            </section>
+        </div>
+        <div class="meme-editor-container flex space-between align-center">
+            <div class="canvas-wraper">
+                <canvas id="meme-editor-canvas" height="500" width="500" onmousedown="onCanvasClicked(event)"></canvas>
+            </div>
+            <div class="editor-wraper flex column space-between align-center">
+                <input class="memeText" type="text" name="txt" onkeyup="onTopTxtChange(this.value)"
+                    placeholder="Enter text here">
+                <button class="addText" onclick="onAddLine()">Add Text</button>
+                <button class="delText" onclick="onDeleteLine()">Delete Item</button>
+                <div class="editor-btns flex space-between align-center">
+                    <button onclick="onTxtIncrease()">+</button>
+                    <button onclick="onTxtDecrease()">-</button>
+                    <button onmousedown="onTxtUp()">^</button>
+                    <button onmousedown="onTxtDown()">v</button>
+                    <button class="swap-btn flex justify-center align-center" onmousedown="onSwitchLine()"><img
+                            src="img/swap.png"></button>
+                    <button class="save-btn flex justify-center align-center" onmousedown="onSaveMeme()"
+                        onmouseover="clearLineBorder()" onclick="onSaveSuccess()"> <img src="img/save.png"> </button>
+                </div>
+                <button class="show-saved-memes-btn" onclick="onbreadSavedClick()">See Saved Memes</button>
+
+                <div class="align-btns flex space-between align-center">
+                    <button class="align" onclick="onAlignLeft()"> <img class="align-img" src="img/alignleft.png">
+                    </button>
+                    <button class="align" onclick="onAlignCenter()"><img class="align-img"
+                            src="img/aligncenter.png"></button>
+                    <button class="align" onclick="onAlignRight()"><img class="align-img"
+                            src="img/alignright.png"></button>
+                </div>
+
+                <div class="color-btns flex space-between align-center">
+                    <select onchange="onFontSelect(this.value)">
+                        <option value="Impact">Impact</option>
+                        <option value="Arial">Arial</option>
+                        <option value="monospace">Monospace</option>
+                    </select>
+                    <input type="color" onchange="onFillColorClick(this.value)"></button>
+                    <input type="color" onchange="onStrokeColorClick(this.value)"></button>
+                </div>
+
+                <div onmouseover="clearLineBorder()" class="stickers-container flex align-center space-evenly">
+
+                </div>
+                <input class="file-input btn" type="file" name="image" onchange="onImgInput(event)" />
+                <div class="download-share-wraper flex align-center space-between">
+                    <button> <a href="#" class="btn download-meme-editor" onclick="downloadImg(this)" onmouseover="clearLineBorder()"
+                            download="my-img.jpg">Download</a> </button>
+                    <form class="flex space-between align-center justify-center" action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
+                        <input name="img" id="imgData" type="hidden" />
+                        <button onclick="onUploadMeme()" class="btn" type="submit">Share It!</button>
+                        <div class="share-container align-center justify-center">Facebook</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="saved-memes flex align-center justify-center">
+
+        </div>
+    </main>
+
+    <script src="js/hammer.min.js"></script>
+    <script src="js/upload-service.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/meme-editor-controller.js"></script>
+    <script src="js/canvas-controller.js"></script>
+    <script src="js/meme-gallery-controller.js"></script>
+    <script src="js/meme-service.js"></script>
+</body>
+
+</html>
