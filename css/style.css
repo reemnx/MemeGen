@@ -20,6 +20,8 @@ body {
     padding: 0;
     height: 100vh;
     width: 100vw;
+    overflow-x: hidden;
+    
 }
 
 img {
@@ -593,19 +595,21 @@ main {
     .editor-wraper {
         margin: 10px 0px;
         width: 100%;
+        height: fit-content;
+        padding: 10px 5px;
     }
     .meme-gallery-container {
         width: 98%;
     }
     .meme-images img {
         margin-left: 0px;
-        width: 150px;
-        height: 150px;
+        width: 175px;
+        height: 175px;
     }
     .meme-gallery-filter select {
         background-color: rgb(0, 0, 0);
     }
-    .meme-editor-container{
+    .meme-editor-container {
         padding: 5px 2px 0px 2px;
     }
     .canvas-wraper {
@@ -615,6 +619,13 @@ main {
     }
     main {
         height: fit-content !important;
+    }
+    .editor-btns{
+        padding: 10px 5px;
+    }
+    .editor-btns button {
+        width: 50px;
+        height: 50px;
     }
 }
 
@@ -637,4 +648,17 @@ main {
     .header-container {
         padding: 10px 0px;
     }
+}
+
+/* ::-webkit-scrollbar {
+    width: 8px;
+    background-color: rgb(3, 161, 127);
+    -webkit-border-radius: 100px;
+} */
+
+::-webkit-scrollbar-track {
+    background-color: coral;
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgb(5, 105, 199);
 }

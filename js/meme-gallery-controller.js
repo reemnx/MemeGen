@@ -95,7 +95,6 @@ function onFilterChange(filter) {
 }
 function checkScreenSize() {
     var w = window.outerWidth;
-    var h = window.outerHeight;
     if (w < 660) {
         gIsMobile = true;
         resizeCanvas();

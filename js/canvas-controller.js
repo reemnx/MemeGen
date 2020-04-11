@@ -4,7 +4,9 @@ var gCtx;
 var gPosX = 0;
 var gPosY = 0;
 var gIsLinePressed = false;
-var hammertime = new Hammer(document.querySelector('#meme-editor-canvas'));
+var canvasTouchHandler = new Hammer(document.querySelector('#meme-editor-canvas'));
+var editorTouchHandler = new Hammer(document.querySelector('.editor-wraper'));
+var headerTouchHandler = new Hammer(document.querySelector('.header-container'));
 
 function initCanvas() {
     gCanvas = document.querySelector('#meme-editor-canvas');
@@ -45,16 +47,16 @@ document.querySelector('#meme-editor-canvas').addEventListener('mouseup', e => {
 
 // Touch Events
 
-hammertime.on('press', function (e) {
+canvasTouchHandler.on('panstart', function (e) {
     e.preventDefault();
     if (gCurrLine !== -1 || gCurrSticker !== -1) {
         gIsLinePressed = true;
         console.log(gIsLinePressed);
+        document.querySelector('body').style.touchAction = 'none' ;
     }
-    editorImgDrawer(gMeme.imgUrl);
 });
 
-hammertime.on('pan', function (e) {
+canvasTouchHandler.on('pan' , function (e) {
     e.preventDefault();
     
     if (!gIsLinePressed) return;
@@ -70,12 +72,18 @@ hammertime.on('pan', function (e) {
         editorImgDrawer(gMeme.imgUrl);
     }
 });
-hammertime.on('panend', function (e) {
+canvasTouchHandler.on('panend', function (e) {
     e.preventDefault();
     gIsLinePressed = false;
-    editorImgDrawer(gMeme.imgUrl);
-    
 });
+editorTouchHandler.on('pan press tap swipe', function (e) {
+    document.querySelector('body').style.touchAction = 'manipulation' ;
+});
+headerTouchHandler.on('pan press tap swipe', function (e) {
+    document.querySelector('body').style.touchAction = 'manipulation' ;
+});
+
+// document.querySelector('body').style.touchAction = 'manipulation' ;
 
 //   Render canvas
 
@@ -132,18 +140,7 @@ function onCanvasClicked(ev) {
                 && offsetY < line.posY
                 && offsetY > line.posY - line.lineHeight
         }
-        else if (line.align === 'left') {
-            return offsetX > line.posX
-                && offsetX < line.posX + line.lineWidth
-                && offsetY < line.posY
-                && offsetY > line.posY - line.lineHeight
-        }
-        else if (line.align === 'right') {
-            return offsetX < line.posX
-                && offsetX > line.posX - line.lineWidth
-                && offsetY < line.posY
-                && offsetY > line.posY - line.lineHeight
-        }
+
     })
     var stickerIdx = stickers.findIndex(sticker => {
         return offsetX > sticker.posX
@@ -175,8 +172,8 @@ function clearLineBorder() {
     editorImgDrawer(gMeme.imgUrl)
 }
 function resizeCanvas() {
-    gCanvas.width = 400;
-    gCanvas.height = 400;
+    gCanvas.width = 390;
+    gCanvas.height = 390;
     gPosX = gCanvas.width / 2;
     gPosY = gCanvas.height / 2;
 }
