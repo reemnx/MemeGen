@@ -75,7 +75,7 @@ function loadImageFromInput(ev) {
         var img = new Image();
         img.src = event.target.result;
         gMeme.imgUrl = img.src;
-        editorImgDrawer(gMeme.imgUrl);
+        editorImgDrawer(gMeme.imgUrl); //render canvas
 
     }
     reader.readAsDataURL(ev.target.files[0]);

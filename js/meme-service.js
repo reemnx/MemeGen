@@ -268,7 +268,7 @@ function inLineChangeFinish() {
     var inputWraper = document.querySelector('.inline-input');
     inputWraper.style.display = 'none';
     if(!gCurrInputVal){
-        gCurrInputVal = 'Enter Text Here';
+        gCurrInputVal = 'Fill Some Text ;)';
         }
     gMeme.lines[gCurrLineChange].txt = gCurrInputVal ;
     editorImgDrawer(gMeme.imgUrl);

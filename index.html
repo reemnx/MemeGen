@@ -7,7 +7,7 @@
     <title>MemeGen | Reem Alon</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/favicon.jpg" />
-
+    
 </head>
 
 <body onload="onInit()">
@@ -80,8 +80,11 @@
                     <input type="color" onchange="onFillColorClick(this.value)"></button>
                     <input type="color" onchange="onStrokeColorClick(this.value)"></button>
                 </div>
-
-                <input class="file-input btn" type="file" name="image" onchange="onImgInput(event)" />
+                
+                <label for="file-input" class="custom-file-upload flex justify-center align-center">
+                    <img src="img/file-upload.png" > Use your own Image
+                </label>
+                <input id="file-input" type="file" onchange="onImgInput(event)" />
                 <div onmouseover="clearLineBorder()" class="stickers-container flex align-center space-evenly">
 
                 </div>

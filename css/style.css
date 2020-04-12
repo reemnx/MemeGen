@@ -200,13 +200,43 @@ main {
 
 .editor-wraper input {
     width: 90%;
-    height: 35px;
+    height: fit-content;
+    min-height: 35px;
+    padding-left: 10px;
+    font-size: 16px;
+    font-weight: 550;
     border: none;
     border-radius: 5px;
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
-    padding-left: 10px;
     outline: none;
-    margin-bottom: 10px;
+}
+.custom-file-upload{
+    border: 2px solid #e91e63;
+    width: 90%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #e91e63;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    transition: 0.3s;
+}
+.custom-file-upload:hover{
+    cursor: pointer;
+    color: #1e76e9;
+    border: 2px solid #1e76e9;
+    letter-spacing: 1.3px;
+}
+.custom-file-upload img {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+#file-input{
+    display: none;
+    border: 2px solid #e91e63;
+    padding: 10px;
 }
 
 .editor-wraper input:focus {
@@ -310,7 +340,6 @@ main {
     border-radius: 5px;
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
     outline: none;
-    margin-bottom: 10px;
     padding: 0px 10px;
 }
 
@@ -491,14 +520,13 @@ main {
 .inline-input{
     display: none;
     position: absolute;
-    height: 40px;  
+    height: fit-content;  
     left: 0px;
     top: 0px;
     
 }
 .inline-input input{
     outline: none;
-    padding: 5px;
     border: none;
     background-color: rgba(255, 127, 80, 0.329);
     width: fit-content;
@@ -509,6 +537,7 @@ main {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 40px;
 }
+
 
 /* flex-helpers */
 

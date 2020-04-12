@@ -32,6 +32,7 @@ canvasTouchHandler.on('panend', function (e) {
     e.preventDefault();
     gIsLinePressed = false;
 });
+
 editorTouchHandler.on('pan press tap swipe', function (e) {
     document.querySelector('body').style.touchAction = 'manipulation' ;
 });
