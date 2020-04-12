@@ -3,17 +3,13 @@
 var canvasTouchHandler = new Hammer(document.querySelector('#meme-editor-canvas'));
 var editorTouchHandler = new Hammer(document.querySelector('.editor-wraper'));
 var headerTouchHandler = new Hammer(document.querySelector('.header-container'));
-
 canvasTouchHandler.on('panstart', function (e) {
     e.preventDefault();
-    console.log('panStart');
-    
     if (gCurrLine !== -1 || gCurrSticker !== -1) {
         gIsLinePressed = true;
         document.querySelector('body').style.touchAction = 'none' ;
     }
 });
-
 canvasTouchHandler.on('pan' , function (e) {
     e.preventDefault();
     document.querySelector('body').style.touchAction = 'none' ;

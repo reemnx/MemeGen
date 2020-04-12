@@ -5,6 +5,8 @@ var gId = 100;
 var gCurrLine = 0;
 var gCurrSticker = 0;
 var gSavedMemes = loadSavedMemes();
+var gCurrInputVal = '' ;
+var gCurrLineChange = 0;
 
 var gImgs = [
     { id: 1, url: 'img/1.jpg', keyWords: ['Politics'] },
@@ -83,8 +85,8 @@ function addSticker(url, idx) {
     editorImgDrawer(gMeme.imgUrl);
 }
 function addLine() {
-    var txtSize = 50 ;
-    if(gIsMobile) txtSize = 40 ;
+    var txtSize = 50;
+    if (gIsMobile) txtSize = 40;
     gMeme.lines.push({
         txt: 'This is new line',
         size: txtSize,
@@ -233,9 +235,37 @@ function onSavedMemeDelete(idx) {
     saveToStorage(KEY, gSavedMemes);
     renderSavedMemes();
 }
-function setTxtSize(){
-    if(gIsMobile){
-        gMeme.lines[0].size = 30 ;
-        gMeme.lines[1].size = 30 ;
+function setTxtSize() {
+    if (gIsMobile) {
+        gMeme.lines[0].size = 30;
+        gMeme.lines[1].size = 30;
     }
+}
+function inlineEdit() {
+    var currLine = gMeme.lines[gCurrLine];
+    var inputWraper = document.querySelector('.inline-input');
+    var input = document.querySelector('.inline-input input');
+    inputWraper.style.left = `0px`;
+    inputWraper.style.top = currLine.posY - currLine.lineHeight + `px`;
+    inputWraper.style.height = currLine.lineHeight + `px`;
+    input.style.fontSize = currLine.size + 'px';
+    inputWraper.style.display = 'block';
+    input.value = currLine.txt;
+    gCurrInputVal = input.value ;
+    gCurrLineChange = gCurrLine ;
+    currLine.txt = '';
+    input.focus();
+    editorImgDrawer(gMeme.imgUrl);
+}
+function inLineChangedText(el , ev) {
+    var currLine = gMeme.lines[gCurrLine];
+    gCurrInputVal = el.value;
+    if (ev.keyCode === 13) inLineChangeFinish();  
+    
+}
+function inLineChangeFinish() {
+    var inputWraper = document.querySelector('.inline-input');
+    inputWraper.style.display = 'none';
+    gMeme.lines[gCurrLineChange].txt = gCurrInputVal ;
+    editorImgDrawer(gMeme.imgUrl);
 }
