@@ -260,12 +260,16 @@ function inlineEdit() {
 function inLineChangedText(el , ev) {
     var currLine = gMeme.lines[gCurrLine];
     gCurrInputVal = el.value;
+   
     if (ev.keyCode === 13) inLineChangeFinish();  
     
 }
 function inLineChangeFinish() {
     var inputWraper = document.querySelector('.inline-input');
     inputWraper.style.display = 'none';
+    if(!gCurrInputVal){
+        gCurrInputVal = 'Enter Text Here';
+        }
     gMeme.lines[gCurrLineChange].txt = gCurrInputVal ;
     editorImgDrawer(gMeme.imgUrl);
 }
