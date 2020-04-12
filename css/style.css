@@ -492,14 +492,16 @@ main {
     display: none;
     position: absolute;
     height: 40px;  
-    width: 100%;
     left: 0px;
     top: 0px;
+    
 }
 .inline-input input{
-    background-color: transparent;
+    outline: none;
+    padding: 5px;
     border: none;
-    width: 100%;
+    background-color: rgba(255, 127, 80, 0.329);
+    width: fit-content;
     height: 100%;
     font-size: 20px;
     -webkit-text-stroke: 1.6px rgb(0, 0, 0);

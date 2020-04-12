@@ -41,7 +41,7 @@
         <div class="meme-editor-container flex space-between align-center">
             <div class="canvas-wraper">
                 <div class="inline-input">
-                    <input type="text" onkeypress="onInlineChangeText(this, event)" onfocusout="onInlineChangeFinish()">
+                    <input type="text" onkeyup="onInlineChangeText(this, event)" onfocusout="onInlineChangeFinish()">
                 </div>
                 <canvas id="meme-editor-canvas" height="500" width="500" ondblclick="onInlineEdit()" onmousedown="onCanvasClicked(event)" ></canvas>
             </div>

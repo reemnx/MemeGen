@@ -114,6 +114,8 @@ function markLine() {
     if (gCurrLine !== -1) {
         gCtx.rect(gMeme.lines[gCurrLine].posX - (gMeme.lines[gCurrLine].lineWidth / 2) - 10, gMeme.lines[gCurrLine].posY - gMeme.lines[gCurrLine].lineHeight - 10, gMeme.lines[gCurrLine].lineWidth + 20, gMeme.lines[gCurrLine].lineHeight + 20)
         gCtx.strokeStyle = '#e91e63';
+        gCtx.fillStyle = '#70707030';
+        gCtx.fill();
     }
     else {
         gCtx.rect(gMeme.stickers[gCurrSticker].posX - 10, gMeme.stickers[gCurrSticker].posY - 10, gMeme.stickers[gCurrSticker].width + 20, gMeme.stickers[gCurrSticker].height + 20)

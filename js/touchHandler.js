@@ -3,6 +3,7 @@
 var canvasTouchHandler = new Hammer(document.querySelector('#meme-editor-canvas'));
 var editorTouchHandler = new Hammer(document.querySelector('.editor-wraper'));
 var headerTouchHandler = new Hammer(document.querySelector('.header-container'));
+
 canvasTouchHandler.on('panstart', function (e) {
     e.preventDefault();
     if (gCurrLine !== -1 || gCurrSticker !== -1) {
