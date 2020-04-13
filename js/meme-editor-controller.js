@@ -89,6 +89,13 @@ function markTextInput() {
     document.querySelector('.memeText').classList.add('border-focus');
     setTimeout(function () { document.querySelector('.memeText').classList.remove('border-focus'); }, 220);
 }
-function onStickerClicked(elSticker , idx) {
-    addSticker(elSticker.src , idx);
+function onStickerClicked(elSticker, idx) {
+    addSticker(elSticker.src, idx);
+}
+function onTextInputFocus(elInput) {
+    if (gCurrLine === -1) {
+        gCurrLine = 0;
+        editorImgDrawer(gMeme.imgUrl);
+    }
+    elInput.value = gMeme.lines[gCurrLine].txt;
 }

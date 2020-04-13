@@ -2,20 +2,25 @@
 
 var gFilter = 'All';
 var gEditor = document.querySelector('.meme-editor-container');
-var gIsMobile = false ;
+var gIsMobile = false;
+var gIsModalShown = false;
 
 function onInit() {
     gEditor.style.display = 'none';
     renderMemeGallery();
     initCanvas();
-    setTimeout(function(){ 
-    document.querySelector('.intro-modal').classList.add('flex') ;
-}, 1500);
+    initIntroModal();
 }
-
-function onCloseIntroModal(){
-    document.querySelector('.intro-modal').style.display = 'none' ;
-    document.querySelector('.meme-otd-left-card').style.display = 'none' ;
+function initIntroModal() {
+    if(gIsModalShown) return
+    setTimeout(function () {
+        document.querySelector('.intro-modal').classList.add('flex');
+    }, 1500);
+}
+function onCloseIntroModal() {
+    document.querySelector('.intro-modal').style.display = 'none';
+    document.querySelector('.meme-otd-left-card').style.display = 'none';
+    gIsModalShown = true;
 }
 
 // Gallery fn's
@@ -46,7 +51,7 @@ function onImgClicked(elImg) {
     gEditor.style.display = 'flex';
     document.querySelector('.saved-memes').style.display = 'none';
     renderStickers();
-    gCurrLine = 0 ;
+    gCurrLine = 0;
 }
 function onbreadGalleryClick() {
     gEditor.style.display = 'none';

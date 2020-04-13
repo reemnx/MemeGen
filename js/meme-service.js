@@ -140,7 +140,12 @@ function deleteLine() {
     }
 }
 function changeTopTxt(txtValue) {
+    if(!txtValue.length){
+        gMeme.lines[gCurrLine].txt = 'Fill Some Text <3';
+    }
+    else{
     gMeme.lines[gCurrLine].txt = txtValue;
+    }
     editorImgDrawer(gMeme.imgUrl);
 }
 function increaseTxt() {

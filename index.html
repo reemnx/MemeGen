@@ -49,7 +49,8 @@
                     <option value="Funny">Funny</option>
                 </select>
             </section>
-
+            
+            <h2>Choose an image to start edit</h2>
             <section class="meme-images flex space-between wrap">
 
             </section>
@@ -63,8 +64,8 @@
                     onmousedown="onCanvasClicked(event)"></canvas>
             </div>
             <div class="editor-wraper flex column space-between align-center">
-                <input class="memeText" type="text" name="txt" onkeyup="onTopTxtChange(this.value)"
-                    placeholder="Enter text here">
+                <input class="memeText" type="text" name="txt" onfocus="onTextInputFocus(this)" onkeyup="onTopTxtChange(this.value)"
+                    placeholder="Enter text here Or double tap for edit">
                 <button class="addText" onclick="onAddLine()">Add Text</button>
                 <button class="delText" onclick="onDeleteLine()">Delete Item</button>
                 <div class="editor-btns flex space-between align-center">
