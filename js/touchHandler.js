@@ -5,7 +5,6 @@ var editorTouchHandler = new Hammer(document.querySelector('.editor-wraper'));
 var headerTouchHandler = new Hammer(document.querySelector('.header-container'));
 
 
-
 canvasTouchHandler.on('pan press tap swipe', function (e) {
     document.querySelector('body').style.touchAction = 'none' ;
 });
@@ -14,6 +13,10 @@ canvasTouchHandler.on('panstart', function (e) {
     if (gCurrLine !== -1 || gCurrSticker !== -1) {
         gIsLinePressed = true;
     }
+});
+canvasTouchHandler.on('doubletap', function (e) {
+    if(!gIsMobile) return
+    inlineEdit(20);
 });
 canvasTouchHandler.on('pan' , function (e) {
     
@@ -39,3 +42,19 @@ editorTouchHandler.on('pan press tap swipe', function (e) {
 headerTouchHandler.on('pan press tap swipe', function (e) {
     document.querySelector('body').style.touchAction = 'manipulation' ;
 });
+
+
+
+// // Create a recognizer
+// var DoubleTap = new Hammer.Tap({
+//   event: 'doubletap',
+//   taps: 2
+// });
+
+// // Add the recognizer to the manager
+// manager.add(DoubleTap);
+
+// // Subscribe to desired event
+// manager.on('doubletap', function(e) {
+//   e.target.classList.toggle('expand');
+// });

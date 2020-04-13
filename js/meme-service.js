@@ -241,13 +241,15 @@ function setTxtSize() {
         gMeme.lines[1].size = 30;
     }
 }
-function inlineEdit() {
+function inlineEdit(increase=10) {
+    console.log('hi');
+    
     var currLine = gMeme.lines[gCurrLine];
     var inputWraper = document.querySelector('.inline-input');
     var input = document.querySelector('.inline-input input');
     inputWraper.style.left = `0px`;
     inputWraper.style.top = currLine.posY - currLine.lineHeight + `px`;
-    inputWraper.style.height = currLine.lineHeight + `px`;
+    inputWraper.style.height = currLine.lineHeight + increase + `px`;
     input.style.fontSize = currLine.size + 'px';
     inputWraper.style.display = 'block';
     input.value = currLine.txt;
@@ -258,7 +260,6 @@ function inlineEdit() {
     editorImgDrawer(gMeme.imgUrl);
 }
 function inLineChangedText(el , ev) {
-    var currLine = gMeme.lines[gCurrLine];
     gCurrInputVal = el.value;
    
     if (ev.keyCode === 13) inLineChangeFinish();  

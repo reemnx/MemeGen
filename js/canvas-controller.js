@@ -4,7 +4,10 @@ var gCtx;
 var gPosX = 0;
 var gPosY = 0;
 var gIsLinePressed = false;
-
+var selectedStatus={
+    noImg:-1,
+    noSticker:-1,
+}
 function initCanvas() {
     gCanvas = document.querySelector('#meme-editor-canvas');
     gCtx = gCanvas.getContext('2d');
@@ -15,7 +18,7 @@ function initCanvas() {
 // Canvas Listeners
 
 document.querySelector('#meme-editor-canvas').addEventListener('mousedown', e => {
-    if (gCurrLine !== -1 || gCurrSticker !== -1) {
+    if (gCurrLine !== selectedStatus.noImg || gCurrSticker !== -1) {
         gIsLinePressed = true;
         console.log(gIsLinePressed);
     }
@@ -51,8 +54,8 @@ function editorImgDrawer(imgUrl, x = 0, y = 0) {
         gCtx.drawImage(img, x, y, gCanvas.width, gCanvas.height);
         var lines = getMeme();
         var stickers = getStickers();
-        lines.map((el, idx) => {
-            drawText(el.txt, el.size, el.align, el.posX, el.posY, el.fillColor, el.strokeColor, el.font, idx);
+        lines.map((line, idx) => {
+            drawText(line.txt, line.size, line.align, line.posX, line.posY, line.fillColor, line.strokeColor, line.font, idx);
         });
 
         if (stickers.length) {
@@ -68,7 +71,7 @@ function editorImgDrawer(imgUrl, x = 0, y = 0) {
     }
 }
 
-function drawText(text, size, align, x, y, fillColor, strokeColor, font, idx) {
+function drawText(text, size, align, x, y, fillColor, strokeColor, font, idx) { //object destructuring?
     gCtx.lineWidth = '1.6'
     gCtx.fillStyle = fillColor
     gCtx.strokeStyle = strokeColor
@@ -111,7 +114,7 @@ function onCanvasClicked(ev) {
 function markLine() {
     if (gCurrLine === -1 && gCurrSticker === -1) return
     gCtx.beginPath();
-    if (gCurrLine !== -1) {
+    if (gCurrLine !== -1 && gMeme.lines[gCurrLine].txt.length) {
         gCtx.rect(gMeme.lines[gCurrLine].posX - (gMeme.lines[gCurrLine].lineWidth / 2) - 10, gMeme.lines[gCurrLine].posY - gMeme.lines[gCurrLine].lineHeight - 10, gMeme.lines[gCurrLine].lineWidth + 20, gMeme.lines[gCurrLine].lineHeight + 20)
         gCtx.strokeStyle = '#e91e63';
         gCtx.fillStyle = '#70707030';

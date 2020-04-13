@@ -119,7 +119,79 @@ main {
     color: cyan;
     cursor: pointer;
 }
+.memes-otd-container{
+    z-index: 50;
+    width: fit-content;
+    background-color: rgba(0, 0, 0, 0.849);
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.memes-ots-header{
+ height: fit-content;
+}
+.memes-otd-container h2 {
+    width: fit-content;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 1px;
+    color: white;
+    padding-bottom: 5px;
+    border-bottom: 1px solid coral;
+}
+.memes-otd-container img {
+    width: 70px;
+    height: 70px;
+    margin-left: 10px;
+    border-radius: 5px;
+    
+}
+.meme-otd-left-card {
+  margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.705);
+    border: 1.6px solid coral;
+    width: 200px;
+    height: 90%;
+    border-radius: 10px;
+    padding: 3px;
+}
+.meme-otd-left-card img {
+width: 100%;
+height: 80%;
+margin: 0px;
+margin-bottom: 10px;
+}
+.meme-otd-left-card img:nth-child(2){
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
 
+}
+.meme-otd-left-card h3{
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+.meme-otd-left-card button{
+    width: 90%;
+    height: 30px;
+    border: none;
+    background-color: coral;
+    color: rgb(255, 255, 255);
+    letter-spacing: 1.3px;
+    border-radius: 5px;
+}
+.meme-otd-left-card button:hover{
+    background-color: black;
+    cursor: pointer;
+}
+.intro-modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.699);
+    width: 100%;
+    height: 100%;
+}
 .meme-gallery-container {
     width: 80%;
     /* display: none; */
@@ -535,6 +607,7 @@ main {
 }
 .inline-input{
     display: none;
+    width: 100%;
     position: absolute;
     height: fit-content;  
     left: 0px;
@@ -545,7 +618,7 @@ main {
     outline: none;
     border: none;
     background-color: rgba(255, 127, 80, 0.329);
-    width: fit-content;
+    width: 100%;
     height: 100%;
     font-size: 20px;
     -webkit-text-stroke: 1.6px rgb(0, 0, 0);
@@ -717,12 +790,6 @@ main {
         padding: 10px 0px;
     }
 }
-
-/* ::-webkit-scrollbar {
-    width: 8px;
-    background-color: rgb(3, 161, 127);
-    -webkit-border-radius: 100px;
-} */
 
 ::-webkit-scrollbar-track {
     background-color: coral;

@@ -8,6 +8,14 @@ function onInit() {
     gEditor.style.display = 'none';
     renderMemeGallery();
     initCanvas();
+    setTimeout(function(){ 
+    document.querySelector('.intro-modal').classList.add('flex') ;
+}, 1500);
+}
+
+function onCloseIntroModal(){
+    document.querySelector('.intro-modal').style.display = 'none' ;
+    document.querySelector('.meme-otd-left-card').style.display = 'none' ;
 }
 
 // Gallery fn's
