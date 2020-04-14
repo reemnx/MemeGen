@@ -12,7 +12,7 @@
 
 <body onload="onInit()">
 
-    <div class="intro-modal justify-center align-center">
+    <div class="intro-modal flex justify-center align-center">
         <div class="memes-otd-container flex column align-center space-between">
             <div class="memes-ots-header flex justify-center align-center">
                 <h2>Meme Of The day</h2> <img src="img/trumpgif.gif">
@@ -64,7 +64,7 @@
                     onmousedown="onCanvasClicked(event)"></canvas>
             </div>
             <div class="editor-wraper flex column space-between align-center">
-                <input class="memeText" type="text" name="txt" onfocus="onTextInputFocus(this)" onkeyup="onTopTxtChange(this.value)"
+                <input class="memeText" type="text" name="txt" onfocusout="onTextInputOut(this)" onfocus="onTextInputFocus(this)" onkeyup="onTopTxtChange(this.value)"
                     placeholder="Enter text here Or double tap for edit">
                 <button class="addText" onclick="onAddLine()">Add Text</button>
                 <button class="delText" onclick="onDeleteLine()">Delete Item</button>
