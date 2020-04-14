@@ -21,7 +21,6 @@ body {
     height: 100vh;
     width: 100vw;
     overflow-x: hidden;
-    
 }
 
 img {
@@ -105,7 +104,6 @@ main {
 
 .logo {
     width: 150px;
-    
 }
 
 .header-breadcrumb h2 {
@@ -120,7 +118,8 @@ main {
     color: cyan;
     cursor: pointer;
 }
-.memes-otd-container{
+
+.memes-otd-container {
     z-index: 50;
     width: fit-content;
     background-color: rgba(0, 0, 0, 0.849);
@@ -128,9 +127,11 @@ main {
     border-radius: 10px;
     margin-bottom: 10px;
 }
-.memes-ots-header{
- height: fit-content;
+
+.memes-ots-header {
+    height: fit-content;
 }
+
 .memes-otd-container h2 {
     width: fit-content;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -139,15 +140,16 @@ main {
     padding-bottom: 5px;
     border-bottom: 1px solid coral;
 }
+
 .memes-otd-container img {
     width: 70px;
     height: 70px;
     margin-left: 10px;
     border-radius: 5px;
-    
 }
+
 .meme-otd-left-card {
-  margin-top: 10px;
+    margin-top: 10px;
     background-color: rgba(255, 255, 255, 0.705);
     border: 1.6px solid coral;
     width: 200px;
@@ -155,24 +157,27 @@ main {
     border-radius: 10px;
     padding: 3px;
 }
+
 .meme-otd-left-card img {
-width: 100%;
-height: 80%;
-margin: 0px;
-margin-bottom: 10px;
+    width: 100%;
+    height: 80%;
+    margin: 0px;
+    margin-bottom: 10px;
 }
-.meme-otd-left-card img:nth-child(2){
+
+.meme-otd-left-card img:nth-child(2) {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-
 }
-.meme-otd-left-card h3{
+
+.meme-otd-left-card h3 {
     font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 1px;
     margin-bottom: 10px;
 }
-.meme-otd-left-card button{
+
+.meme-otd-left-card button {
     width: 90%;
     height: 30px;
     border: none;
@@ -181,26 +186,29 @@ margin-bottom: 10px;
     letter-spacing: 1.3px;
     border-radius: 5px;
 }
-.meme-otd-left-card button:hover{
+
+.meme-otd-left-card button:hover {
     background-color: black;
     cursor: pointer;
 }
+
 .intro-modal {
-    display: none;
     position: fixed;
     z-index: 10;
     right: 0;
     background-color: rgba(255, 255, 255, 0.699);
     height: 100%;
     transform: translateX(100%);
-    animation: slidein 0.5s ease-in-out;
-} 
+    animation: slidein .5s ease-in;
+    animation-fill-mode: forwards;
+}
 
 .meme-gallery-container {
     width: 80%;
     text-align: center;
 }
-.meme-gallery-container h2{
+
+.meme-gallery-container h2 {
     width: 100%;
     border-radius: 10px;
     margin-bottom: 5px;
@@ -296,7 +304,8 @@ margin-bottom: 10px;
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
     outline: none;
 }
-.custom-file-upload{
+
+.custom-file-upload {
     border: 2px solid #e91e63;
     width: 90%;
     padding: 10px 20px;
@@ -307,19 +316,21 @@ margin-bottom: 10px;
     font-size: 18px;
     transition: 0.3s;
 }
-.custom-file-upload:hover{
+
+.custom-file-upload:hover {
     cursor: pointer;
     color: #1e76e9;
     border: 2px solid #1e76e9;
     letter-spacing: 1.3px;
 }
+
 .custom-file-upload img {
     width: 25px;
     height: 25px;
     margin-right: 10px;
 }
 
-#file-input{
+#file-input {
     display: none;
     border: 2px solid #e91e63;
     padding: 10px;
@@ -353,12 +364,11 @@ margin-bottom: 10px;
 
 .editor-btns:hover {
     background-color: rgba(0, 255, 255, 0.384);
-    
 }
+
 .editor-btns button:hover {
     cursor: pointer;
     border: 1.5px solid rgb(255, 255, 255);
-    
 }
 
 .editor-btns button:active {
@@ -464,16 +474,19 @@ margin-bottom: 10px;
     flex-wrap: wrap;
     transition: 0.3s;
 }
-.stickers-container:hover{
+
+.stickers-container:hover {
     cursor: pointer;
     background-color: rgba(99, 99, 99, 0.493)
 }
+
 .stickers-container img {
     width: 35px;
     height: 35px;
     transition: 0.3s;
 }
-.stickers-container img:hover{
+
+.stickers-container img:hover {
     width: 40px;
     height: 40px;
     border: 2px black solid;
@@ -619,16 +632,17 @@ margin-bottom: 10px;
     cursor: pointer;
     background-color: rgba(224, 7, 253, 0.644);
 }
-.inline-input{
+
+.inline-input {
     display: none;
     width: 100%;
     position: absolute;
-    height: fit-content;  
+    height: fit-content;
     left: 0px;
     top: 0px;
-    
 }
-.inline-input input{
+
+.inline-input input {
     outline: none;
     border: none;
     background-color: rgba(255, 127, 80, 0.329);
@@ -640,7 +654,6 @@ margin-bottom: 10px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 40px;
 }
-
 
 /* flex-helpers */
 
@@ -774,14 +787,13 @@ margin-bottom: 10px;
     main {
         height: fit-content !important;
     }
-    .editor-btns{
+    .editor-btns {
         padding: 10px 5px;
     }
     .editor-btns button {
         width: 50px;
         height: 50px;
     }
-   
 }
 
 @media (max-width: 660px) {
@@ -803,7 +815,7 @@ margin-bottom: 10px;
     .header-container {
         padding: 10px 0px;
     }
-    .meme-gallery-container h2{
+    .meme-gallery-container h2 {
         font-size: 1.8rem;
     }
 }
@@ -811,15 +823,19 @@ margin-bottom: 10px;
 ::-webkit-scrollbar-track {
     background-color: coral;
 }
-::-webkit-scrollbar-thumb{
+
+::-webkit-scrollbar-thumb {
     background-color: rgb(5, 105, 199);
 }
+
 @keyframes slidein {
-    from {
-      transform: translateX(100%);
+    0% {
+        transform: translateX(100%);
     }
-  
-    to {
-      transform: translateX(0%);
+    50% {
+        transform: translateX(50%);
     }
-  }
+    100% {
+        transform: translateX(0%);
+    }
+}
