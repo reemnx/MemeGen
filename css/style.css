@@ -829,13 +829,11 @@ main {
 }
 
 @keyframes slidein {
-    0% {
+    form{
         transform: translateX(100%);
     }
-    50% {
-        transform: translateX(50%);
-    }
-    100% {
+
+    to {
         transform: translateX(0%);
     }
 }
