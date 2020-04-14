@@ -15,7 +15,6 @@ function initIntroModal() {
     if(gIsModalShown) return
     setTimeout(function () {
         document.querySelector('.intro-modal').classList.add('flex');
-        document.querySelector('.intro-modal').style.transform = 'translateX(0%)' ;
     }, 1500);
 }
 function onCloseIntroModal() {
