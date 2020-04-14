@@ -9,7 +9,7 @@ function onInit() {
     gEditor.style.display = 'none';
     renderMemeGallery();
     initCanvas();
-    initIntroModal();
+    // initIntroModal();
 }
 function initIntroModal() {
     if(gIsModalShown) return
